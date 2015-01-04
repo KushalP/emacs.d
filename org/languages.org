@@ -98,3 +98,14 @@
     '(progn
        (setq scss-compile-at-save nil)))
 #+end_src
+
+** YAML
+
+   We'll probably be editing YAML config files. Especially for Puppet
+   installs that use it for hieradata.
+
+#+begin_src emacs-lisp
+  (ensure-installed 'yaml-mode)
+  (require 'yaml-mode)
+  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+#+end_src

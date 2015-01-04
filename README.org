@@ -1,0 +1,21 @@
+#+TITLE: Kushal's Emacs Configuration
+
+* What is this?
+
+This is my Emacs config. It's my editor of choice and this is the
+configuration I tend to use.
+
+* Old version
+
+The previous Emacs config I used for about 3 years can be found at
+[[https://www.github.com/KushalP/emacs-starter-kit][KushalP/emacs-starter-kit]].
+
+It was based on the excellent [[github.com/technomancy/emacs-starter-kit][technomancy/emacs-starter-kit]] and this
+configuration still takes a lot of what I learnt from it.
+
+* Using it
+
+To use this configuration, run it with Emacs 23 or greater. Cloning
+the repository and using it as your Emacs config directory should be
+enough to get going. Alternatively, use it globally by cloning it into
+=~/.emacs.d=.

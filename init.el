@@ -24,3 +24,4 @@
 ;; Load the main config file.
 (org-babel-load-file (concat user-emacs-directory "org/config.org"))
 (org-babel-load-file (concat user-emacs-directory "org/ui.org"))
+(org-babel-load-file (concat user-emacs-directory "org/languages.org"))

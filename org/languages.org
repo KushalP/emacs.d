@@ -1,0 +1,100 @@
+* Programming Languages
+** Go
+
+#+begin_src emacs-lisp
+  (ensure-installed 'go-mode)
+#+end_src
+
+** Haskell
+
+#+begin_src emacs-lisp
+  (ensure-installed 'haskell-mode)
+  (eval-after-load 'haskell-mode
+    '(progn
+       (add-hook 'haskell-mode-hook #'turn-on-haskell-indentation)
+       (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
+#+end_src
+
+** Lisps
+*** Clojure
+
+   [[https://github.com/clojure-emacs/cider][cider]] is a package for live-coding Clojure by interacting with a
+   Clojure nREPL instance.  [[https://github.com/clojure-emacs/clojure-mode][clojure-mode]] is the major mode for editing
+   clojure code.
+
+#+begin_src emacs-lisp
+  (ensure-installed 'cider)
+  (ensure-installed 'clojure-mode)
+#+end_src
+
+*** Paredit
+
+   Paredit is a minor mode for enforcing balanced parentheses and
+   providing operations on sets of parentheses -- generally "slurp"
+   and "barf" to swallow or remove terms at the right-hand side of a
+   paren pair.  Naturally, this is a good fit for lisps.
+
+#+begin_src emacs-lisp
+  (ensure-installed 'paredit)
+  (eval-after-load 'clojure-mode
+    '(add-hook 'clojure-mode-hook #'enable-paredit-mode))
+  (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+  (eval-after-load 'scheme
+    '(add-hook 'scheme-mode-hook #'enable-paredit-mode))
+#+end_src
+
+*** Pretty lambdas
+
+   Font-lock stuff to display character sequences such as =lambda= as
+   unicode chars such as λ.
+
+   First, we define the font-lock function to detect the appropriate
+   sequence and what to replace it with:
+
+#+begin_src emacs-lisp
+  (defun pretty-lambdas ()
+    (font-lock-add-keywords
+     nil `(("\\(\\<lambda\\>\\)"
+            (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                      ,(string-to-char "λ"))
+                      nil))))))
+#+end_src
+
+   Then we add it to some lisp modes:
+
+#+begin_src emacs-lisp
+  (add-hook 'clojure-mode-hook #'pretty-lambdas)
+  (add-hook 'scheme-mode-hook #'pretty-lambdas)
+#+end_src
+
+** Markdown
+
+#+begin_src emacs-lisp
+  (ensure-installed 'markdown-mode)
+#+end_src
+
+** Nginx
+
+#+begin_src emacs-lisp
+  (ensure-installed 'nginx-mode)
+#+end_src
+
+** Puppet
+
+  [[https://docs.puppetlabs.com/puppet/][Puppet]] is a configuration management language.  First, we want the
+  major mode for editing puppet code:
+
+#+begin_src emacs-lisp
+  (ensure-installed 'puppet-mode)
+#+end_src
+
+** SCSS
+
+   Install the SCSS mode, but turn off auto compilation.
+
+#+begin_src emacs-lisp
+  (ensure-installed 'scss-mode)
+  (eval-after-load 'haskell-mode
+    '(progn
+       (setq scss-compile-at-save nil)))
+#+end_src

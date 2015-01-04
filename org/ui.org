@@ -1,0 +1,120 @@
+* UI
+** rebind the # symbol
+
+#+begin_src emacs-lisp
+  (when (osxp)
+    (fset 'insertPound "#")
+    (global-set-key (kbd "M-3") 'insertPound))
+#+end_src
+
+** turn off visual bell when scrolling past EOF
+
+#+begin_src emacs-lisp
+  (when (osxp)
+    (defun visual-bell-reducer ()
+      (unless (memq this-command
+                    '(isearch-abort abort-recursive-edit exit-minibuffer
+                                    keyboard-quit mwheel-scroll
+                                    down up
+                                    next-line previous-line
+                                    backward-char forward-char))
+        (ding)))
+    (setq ring-bell-function 'visual-bell-reducer))
+#+end_src
+
+** font
+
+   Set it to Deja Vu Sans Mono 14pt.
+
+#+begin_src emacs-lisp
+  (set-face-attribute
+   'default nil
+   :font    "Deja-Vu-Sans-Mono-14")
+#+end_src
+
+** indicate empty lines
+
+    This adds a graphic in the margin to show how many empty lines you
+    have beyond the end of your file's content.
+
+#+begin_src emacs-lisp
+  (setq-default indicate-empty-lines t)
+#+end_src
+
+** spaces over tabs
+
+#+begin_src emacs-lisp
+  (setq-default tab-width 2)
+  (setq-default indent-tabs-mode nil)
+#+end_src
+
+** show trailing whitespace
+
+#+begin_src emacs-lisp
+  (setq show-trailing-whitespace t)
+#+end_src
+
+** newlines
+*** don't extend file when at end of the buffer
+
+#+begin_src emacs-lisp
+  (setq next-line-add-newlines nil)
+#+end_src
+
+*** silently add newlines
+
+#+begin_src emacs-lisp
+  (setq require-final-newline t)
+#+end_src
+
+*** ask about missing newlines when none present
+
+#+begin_src emacs-lisp
+  (setq require-final-newline 'ask)
+#+end_src
+
+** highlighting
+*** highlight matching parentheses when the cursor is on them
+
+#+begin_src emacs-lisp
+  (show-paren-mode 1)
+#+end_src
+
+*** highlight current line
+
+#+begin_src emacs-lisp
+  (when (> (display-color-cells) 8)
+    (hl-line-mode t))
+#+end_src
+
+*** highlight watch words
+
+#+begin_src emacs-lisp
+  (defun add-watchwords ()
+    (font-lock-add-keywords
+     nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
+            1 font-lock-warning-face t))))
+  (add-hook 'prog-mode-hook 'add-watchwords)
+#+end_src
+
+** color-theme
+
+#+begin_src emacs-lisp
+  (ensure-installed 'color-theme)
+  (ensure-installed 'color-theme-twilight)
+
+  (when window-system
+    (require 'color-theme)
+    (color-theme-initialize)
+    (eval-after-load 'color-theme
+      (progn
+        ;; Twilight theme.
+        (load-file (concat user-emacs-directory "elpa/color-theme-twilight-0.1/color-theme-twilight.el"))
+        (color-theme-twilight))))
+#+end_src
+
+** turn off shift select mode
+
+#+begin_src emacs-lisp
+  (setq shift-select-mode nil)
+#+end_src

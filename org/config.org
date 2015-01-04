@@ -121,3 +121,11 @@
     (setq x-super-keysym 'meta))
 #+end_src
 
+** turn on auto-fill
+
+   This will word wrap plain text as we edit it.
+
+#+begin_src emacs-lisp
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+#+end_src

@@ -1,0 +1,17 @@
+# Emacs ignores from github.com/github/gitignore.
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# .emacs.d specific ignores.
+.smex-items
+/auto-save-list
+/backups
+/elpa
+/org/*.el
+/places

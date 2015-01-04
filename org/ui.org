@@ -118,3 +118,11 @@
 #+begin_src emacs-lisp
   (setq shift-select-mode nil)
 #+end_src
+** windmove
+
+   Allows use of shift + arrow keys to switch between buffers.
+
+#+begin_src emacs-lisp
+  (when (fboundp 'windmove-default-keybindings)
+    (windmove-default-keybindings))
+#+end_src

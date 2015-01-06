@@ -129,3 +129,15 @@
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (add-hook 'org-mode-hook 'turn-on-auto-fill)
 #+end_src
+
+** use the same PATH as my shell
+
+   When starting up Emacs, use the same =$PATH= as what I use for my
+   own commands. That way I know the binaries I want to use are
+   present.
+
+#+begin_src emacs-lisp
+  (ensure-installed 'exec-path-from-shell)
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize))
+#+end_src

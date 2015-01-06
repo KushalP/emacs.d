@@ -5,6 +5,18 @@
   (ensure-installed 'go-mode)
 #+end_src
 
+   Set the tab-width to four spaces.
+
+#+begin_src emacs-lisp
+(setq-default tab-width 4)
+#+end_src
+
+   Automatically format Go source using =gofmt=.
+
+#+begin_src emacs-lisp
+(add-hook 'before-save-hook 'gofmt-before-save)
+#+end_src
+
 ** Haskell
 
 #+begin_src emacs-lisp

@@ -51,7 +51,7 @@
 ** show trailing whitespace
 
 #+begin_src emacs-lisp
-  (setq show-trailing-whitespace t)
+  (setq-default show-trailing-whitespace t)
 #+end_src
 
 ** newlines

@@ -111,6 +111,14 @@
        (setq scss-compile-at-save nil)))
 #+end_src
 
+** TOML
+
+   There are a few things that use TOML config files. Like [[https://hekad.readthedocs.org/][heka]].
+
+#+begin_src emacs-lisp
+  (ensure-installed 'toml-mode)
+#+end_src
+
 ** YAML
 
    We'll probably be editing YAML config files. Especially for Puppet

@@ -100,6 +100,14 @@
   (ensure-installed 'puppet-mode)
 #+end_src
 
+** Ruby
+
+   Don't add the coding system headers to files.
+
+#+begin_src emacs-lisp
+  (setq ruby-insert-encoding-magic-comment nil)
+#+end_src
+
 ** SCSS
 
    Install the SCSS mode, but turn off auto compilation.

@@ -100,17 +100,10 @@
 ** color-theme
 
 #+begin_src emacs-lisp
-  (ensure-installed 'color-theme)
-  (ensure-installed 'color-theme-twilight)
+  (ensure-installed 'twilight-theme)
 
   (when window-system
-    (require 'color-theme)
-    (color-theme-initialize)
-    (eval-after-load 'color-theme
-      (progn
-        ;; Twilight theme.
-        (load-file (concat user-emacs-directory "elpa/color-theme-twilight-0.1/color-theme-twilight.el"))
-        (color-theme-twilight))))
+    (load-theme 'twilight t))
 #+end_src
 
 ** turn off shift select mode

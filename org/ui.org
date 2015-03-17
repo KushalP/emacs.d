@@ -97,6 +97,12 @@
   (add-hook 'prog-mode-hook 'add-watchwords)
 #+end_src
 
+*** syntax highlight org-mode source blocks
+
+#+begin_src emacs-lisp
+  (setq org-src-fontify-natively t)
+#+end_src
+
 ** color-theme
 
 #+begin_src emacs-lisp

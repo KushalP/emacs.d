@@ -1,4 +1,10 @@
 * Programming Languages
+** Elixir
+
+#+begin_src emacs-lisp
+  (ensure-installed 'elixir-mode)
+#+end_src
+
 ** Go
 
 #+begin_src emacs-lisp

@@ -33,6 +33,15 @@
        (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
 #+end_src
 
+** JavaScript
+
+#+begin_src emacs-lisp
+  (ensure-installed 'js2-mode)
+  (eval-after-load 'js2-mode
+    '(progn
+       (setq-default js2-basic-offset 2)))
+#+end_src
+
 ** Lisps
 *** Clojure
 

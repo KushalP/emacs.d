@@ -1,5 +1,9 @@
 (require 'package)
 
+(when (< emacs-major-version 24)
+  (error "This setup requires Emacs v24, or higher. You have: v%d"
+         emacs-major-version))
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")

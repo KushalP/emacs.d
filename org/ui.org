@@ -104,12 +104,14 @@
 #+end_src
 
 ** color-theme
+*** Twighlight Theme
 
 #+begin_src emacs-lisp
   (ensure-installed 'twilight-theme)
+  (ensure-installed 'base16-theme)
 
   (when window-system
-    (load-theme 'twilight t))
+    (load-theme 'base16-tomorrow-dark t))
 #+end_src
 
 ** turn off shift select mode

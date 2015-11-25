@@ -94,16 +94,6 @@
   (setq magit-push-always-verify nil)
 #+end_src
 
-   Some cosmetics for magit diffing.
-
-#+begin_src emacs-lisp
-  (eval-after-load 'magit
-    '(progn
-       (set-face-foreground 'magit-diff-add "green4")
-       (set-face-foreground 'magit-diff-del "red3")
-       (setq magit-last-seen-setup-instructions "1.4.0")))
-#+end_src
-
 ** y-or-n-p
 
    This replaces dialogs which require a full "yes" or "no" to just

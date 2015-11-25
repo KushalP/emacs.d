@@ -39,6 +39,12 @@
        (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
 #+end_src
 
+** Idris
+
+#+begin_src emacs-lisp
+  (ensure-installed 'idris-mode)
+#+end_src
+
 ** JavaScript
 
 #+begin_src emacs-lisp

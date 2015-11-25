@@ -5,6 +5,12 @@
   (ensure-installed 'elixir-mode)
 #+end_src
 
+** Elm
+
+#+begin_src emacs-lisp
+  (ensure-installed 'elm-mode)
+#+end_src
+
 ** Go
 
 #+begin_src emacs-lisp

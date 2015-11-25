@@ -87,6 +87,13 @@
   (global-set-key "\C-cg" 'magit-status)
 #+end_src
 
+  Stop asking which branch to push follow and follow whatever
+  the global =git= config has been set to do.
+
+#+begin_src emacs-lisp
+  (setq magit-push-always-verify nil)
+#+end_src
+
    Some cosmetics for magit diffing.
 
 #+begin_src emacs-lisp

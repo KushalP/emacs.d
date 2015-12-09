@@ -104,12 +104,12 @@
 #+end_src
 
 ** color-theme
-*** Twighlight Theme
+*** base16 Theme
 
 #+begin_src emacs-lisp
-  (use-package twilight-theme)
-  (use-package base16-theme)
-
+  ;; (use-package twilight-theme)
+  (use-package base16-theme
+    :ensure t)
   (when window-system
     (load-theme 'base16-tomorrow-dark t))
 #+end_src

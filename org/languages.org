@@ -2,13 +2,15 @@
 ** Elixir
 
 #+begin_src emacs-lisp
-  (use-package elixir-mode)
+  (use-package elixir-mode
+    :ensure t)
 #+end_src
 
 ** Elm
 
 #+begin_src emacs-lisp
-  (use-package elm-mode)
+  (use-package elm-mode
+    :ensure t)
 #+end_src
 
 ** Go
@@ -18,6 +20,7 @@
 
 #+begin_src emacs-lisp
   (use-package go-mode
+    :ensure t
     :init '(progn
             (setq-default tab-width 4)
             (add-hook 'before-save-hook 'gofmt-before-save)))
@@ -27,6 +30,7 @@
 
 #+begin_src emacs-lisp
   (use-package haskell-mode
+    :ensure t
     :init '(progn
             (add-hook 'haskell-mode-hook #'turn-on-haskell-indentation)
             (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
@@ -35,13 +39,15 @@
 ** Idris
 
 #+begin_src emacs-lisp
-  (use-package idris-mode)
+  (use-package idris-mode
+    :ensure t)
 #+end_src
 
 ** JavaScript
 
 #+begin_src emacs-lisp
   (use-package js2-mode
+    :ensure t
     :init '(progn
             (setq-default js2-basic-offset 2)))
 #+end_src
@@ -54,8 +60,10 @@
    clojure code.
 
 #+begin_src emacs-lisp
-  (use-package cider)
-  (use-package clojure-mode)
+  (use-package cider
+    :ensure t)
+  (use-package clojure-mode
+    :ensure t)
 #+end_src
 
 *** Paredit
@@ -67,6 +75,7 @@
 
 #+begin_src emacs-lisp
   (use-package paredit
+    :ensure t
     :init '(progn
             (add-hook 'clojure-mode-hook #'enable-paredit-mode)
             (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
@@ -100,13 +109,15 @@
 ** Markdown
 
 #+begin_src emacs-lisp
-  (use-package markdown-mode)
+  (use-package markdown-mode
+    :ensure t)
 #+end_src
 
 ** Nginx
 
 #+begin_src emacs-lisp
-  (use-package nginx-mode)
+  (use-package nginx-mode
+    :ensure t)
 #+end_src
 
 ** Puppet
@@ -115,7 +126,8 @@
   major mode for editing puppet code:
 
 #+begin_src emacs-lisp
-  (use-package puppet-mode)
+  (use-package puppet-mode
+    :ensure t)
 #+end_src
 
 ** Ruby
@@ -131,10 +143,10 @@
    Install the SCSS mode, but turn off auto compilation.
 
 #+begin_src emacs-lisp
-  (use-package scss-mode)
-  (eval-after-load 'scss-mode
-    '(progn
-       (setq scss-compile-at-save nil)))
+  (use-package scss-mode
+    :ensure t
+    :init '(progn
+            (setq scss-compile-at-save nil)))
 #+end_src
 
 ** TOML
@@ -142,7 +154,8 @@
    There are a few things that use TOML config files. Like [[https://hekad.readthedocs.org/][heka]].
 
 #+begin_src emacs-lisp
-  (use-package toml-mode)
+  (use-package toml-mode
+    :ensure t)
 #+end_src
 
 ** YAML
@@ -152,5 +165,6 @@
 
 #+begin_src emacs-lisp
   (use-package yaml-mode
+    :ensure t
     :init (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 #+end_src

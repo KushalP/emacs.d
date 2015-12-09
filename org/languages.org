@@ -2,56 +2,48 @@
 ** Elixir
 
 #+begin_src emacs-lisp
-  (ensure-installed 'elixir-mode)
+  (use-package elixir-mode)
 #+end_src
 
 ** Elm
 
 #+begin_src emacs-lisp
-  (ensure-installed 'elm-mode)
+  (use-package elm-mode)
 #+end_src
 
 ** Go
 
-#+begin_src emacs-lisp
-  (ensure-installed 'go-mode)
-#+end_src
-
-   Set the tab-width to four spaces.
+   - Set the tab-width to four spaces
+   - Automatically format Go source using =gofmt=
 
 #+begin_src emacs-lisp
-(setq-default tab-width 4)
-#+end_src
-
-   Automatically format Go source using =gofmt=.
-
-#+begin_src emacs-lisp
-(add-hook 'before-save-hook 'gofmt-before-save)
+  (use-package go-mode
+    :init '(progn
+            (setq-default tab-width 4)
+            (add-hook 'before-save-hook 'gofmt-before-save)))
 #+end_src
 
 ** Haskell
 
 #+begin_src emacs-lisp
-  (ensure-installed 'haskell-mode)
-  (eval-after-load 'haskell-mode
-    '(progn
-       (add-hook 'haskell-mode-hook #'turn-on-haskell-indentation)
-       (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
+  (use-package haskell-mode
+    :init '(progn
+            (add-hook 'haskell-mode-hook #'turn-on-haskell-indentation)
+            (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
 #+end_src
 
 ** Idris
 
 #+begin_src emacs-lisp
-  (ensure-installed 'idris-mode)
+  (use-package idris-mode)
 #+end_src
 
 ** JavaScript
 
 #+begin_src emacs-lisp
-  (ensure-installed 'js2-mode)
-  (eval-after-load 'js2-mode
-    '(progn
-       (setq-default js2-basic-offset 2)))
+  (use-package js2-mode
+    :init '(progn
+            (setq-default js2-basic-offset 2)))
 #+end_src
 
 ** Lisps
@@ -62,8 +54,8 @@
    clojure code.
 
 #+begin_src emacs-lisp
-  (ensure-installed 'cider)
-  (ensure-installed 'clojure-mode)
+  (use-package cider)
+  (use-package clojure-mode)
 #+end_src
 
 *** Paredit
@@ -74,12 +66,11 @@
    paren pair.  Naturally, this is a good fit for lisps.
 
 #+begin_src emacs-lisp
-  (ensure-installed 'paredit)
-  (eval-after-load 'clojure-mode
-    '(add-hook 'clojure-mode-hook #'enable-paredit-mode))
-  (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
-  (eval-after-load 'scheme
-    '(add-hook 'scheme-mode-hook #'enable-paredit-mode))
+  (use-package paredit
+    :init '(progn
+            (add-hook 'clojure-mode-hook #'enable-paredit-mode)
+            (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+            (add-hook 'scheme-mode-hook #'enable-paredit-mode)))
 #+end_src
 
 *** Pretty lambdas
@@ -109,13 +100,13 @@
 ** Markdown
 
 #+begin_src emacs-lisp
-  (ensure-installed 'markdown-mode)
+  (use-package markdown-mode)
 #+end_src
 
 ** Nginx
 
 #+begin_src emacs-lisp
-  (ensure-installed 'nginx-mode)
+  (use-package nginx-mode)
 #+end_src
 
 ** Puppet
@@ -124,7 +115,7 @@
   major mode for editing puppet code:
 
 #+begin_src emacs-lisp
-  (ensure-installed 'puppet-mode)
+  (use-package puppet-mode)
 #+end_src
 
 ** Ruby
@@ -140,8 +131,8 @@
    Install the SCSS mode, but turn off auto compilation.
 
 #+begin_src emacs-lisp
-  (ensure-installed 'scss-mode)
-  (eval-after-load 'haskell-mode
+  (use-package scss-mode)
+  (eval-after-load 'scss-mode
     '(progn
        (setq scss-compile-at-save nil)))
 #+end_src
@@ -151,7 +142,7 @@
    There are a few things that use TOML config files. Like [[https://hekad.readthedocs.org/][heka]].
 
 #+begin_src emacs-lisp
-  (ensure-installed 'toml-mode)
+  (use-package toml-mode)
 #+end_src
 
 ** YAML
@@ -160,7 +151,6 @@
    installs that use it for hieradata.
 
 #+begin_src emacs-lisp
-  (ensure-installed 'yaml-mode)
-  (require 'yaml-mode)
-  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+  (use-package yaml-mode
+    :init (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 #+end_src

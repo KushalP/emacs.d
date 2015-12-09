@@ -107,8 +107,8 @@
 *** Twighlight Theme
 
 #+begin_src emacs-lisp
-  (ensure-installed 'twilight-theme)
-  (ensure-installed 'base16-theme)
+  (use-package twilight-theme)
+  (use-package base16-theme)
 
   (when window-system
     (load-theme 'base16-tomorrow-dark t))

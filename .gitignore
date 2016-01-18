@@ -10,6 +10,7 @@ tramp
 
 # .emacs.d specific ignores.
 .smex-items
+ido.last
 /auto-save-list
 /backups
 /elpa

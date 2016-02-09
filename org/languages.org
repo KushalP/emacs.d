@@ -48,8 +48,8 @@
 #+begin_src emacs-lisp
   (use-package js2-mode
     :ensure t
-    :init '(progn
-            (setq-default js2-basic-offset 2)))
+    :mode ("\\.js\\'" . js2-mode)
+    :config (setq-default js2-basic-offset 2))
 #+end_src
 
 ** Lisps

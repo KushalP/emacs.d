@@ -43,7 +43,7 @@
   (defun sudo-edit (&optional arg)
     (interactive "p")
     (if (or arg (not buffer-file-name))
-      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+      (find-file (concat "/sudo:root@localhost:" (read-file-name "File: ")))
       (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 #+end_src
 
@@ -56,30 +56,39 @@
 
   It does all its work in autoloads, so you don't need to require it;
   being installed is enough.
+
 #+begin_src emacs-lisp
   (use-package better-defaults
     :ensure t)
 #+end_src
-
-** ido
-
-  ido-ubiquitous enables ido in many places.  (better-defaults already
-  enables ido for some things, this just goes further).  smex adds
-  ido-like behaviour to =M-x=.
+** helm
 
 #+begin_src emacs-lisp
-  (use-package ido-ubiquitous
-    :ensure t)
+(use-package helm-config
+  :config
+  (progn
+    (helm-mode 1)
+    (helm-adaptive-mode 1)
+    (helm-push-mark-mode 1)))
 
-  (ido-mode t)
-  (ido-ubiquitous-mode t)
+(use-package helm
+  :ensure t
+  :defer t
+  :bind (("M-x" . helm-M-x)
+         ("M-y" . helm-show-kill-ring)
+         ("C-c f" . helm-recentf)
+         ("C-x C-f" . helm-find-files)
+         ("M-g a" . helm-do-grep-ag))
+  :config
+  (setq helm-display-header-line nil)
+  (set-face-attribute 'helm-source-header nil :height 0.1)
+  (setq helm-split-window-in-side-p t)
+  (require 'helm-config)
+  (helm-mode 1)
+  (helm-autoresize-mode 1))
 
-  (use-package smex
-    :ensure t)
-
-  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
-	(smex-initialize)
-	(global-set-key (kbd "M-x") 'smex)
+(use-package helm-ag
+  :ensure t)
 #+end_src
 
 ** magit

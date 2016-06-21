@@ -12,6 +12,7 @@ tramp
 .smex-items
 projectile-bookmarks.eld
 ido.last
+helm-adaptive-history
 /auto-save-list
 /backups
 /elpa

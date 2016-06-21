@@ -138,6 +138,15 @@
   (setq ruby-insert-encoding-magic-comment nil)
 #+end_src
 
+** Rust
+
+#+begin_src emacs-lisp
+  (use-package rust-mode
+    :ensure t)
+  (use-package rustfmt
+    :ensure t)
+#+end_src
+
 ** SCSS
 
    Install the SCSS mode, but turn off auto compilation.

@@ -10,6 +10,7 @@ tramp
 
 # .emacs.d specific ignores.
 .smex-items
+.mc-lists.el
 projectile-bookmarks.eld
 ido.last
 helm-adaptive-history

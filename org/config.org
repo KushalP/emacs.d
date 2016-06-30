@@ -96,7 +96,7 @@
 
 (use-package helm-ls-git
   :ensure t
-  :bind (("C-x g" . helm-ls-git-ls)))
+  :bind (("C-x C-g" . helm-ls-git-ls)))
 #+end_src
 
 ** magit

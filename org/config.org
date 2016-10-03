@@ -177,3 +177,17 @@
 
   (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 #+end_src
+** after-load
+
+   Define a convenient macro that wraps typical =eval-after-load= in
+   such a way that we don’t need to use =progn= to contain the callback
+   logic. This macro was grabbed from:
+   https://github.com/purcell/emacs.d/blob/aa789c9745b13612c4fea6e638d81d8ebbfecdf8/init-utils.el#L1-L5
+
+#+begin_src emacs-lisp
+(defmacro after-load (feature &rest body)
+  "After FEATURE is loaded, evaluate BODY."
+  (declare (indent defun))
+  `(eval-after-load ,feature
+     '(progn ,@body)))
+#+end_src

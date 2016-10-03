@@ -31,6 +31,10 @@
     :init '(progn
             (setq-default tab-width 4)
             (add-hook 'before-save-hook 'gofmt-before-save)))
+
+  (after-load 'go-mode
+    (after-load 'flycheck
+      (add-hook 'go-mode-hook 'flycheck-mode-on-safe)))
 #+end_src
 
 ** Haskell

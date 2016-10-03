@@ -1,4 +1,11 @@
 * Programming Languages
+** C#
+
+#+begin_src emacs-lisp
+  (use-package csharp-mode
+    :ensure t)
+#+end_src
+
 ** Elixir
 
 #+begin_src emacs-lisp

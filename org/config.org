@@ -191,3 +191,11 @@
   `(eval-after-load ,feature
      '(progn ,@body)))
 #+end_src
+
+** flycheck
+
+#+begin_src emacs-lisp
+(use-package flycheck
+  :ensure t
+  :init (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+#+end_src

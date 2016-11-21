@@ -141,6 +141,18 @@
     :ensure t)
 #+end_src
 
+** Python
+
+#+begin_src emacs-lisp
+  (use-package elpy
+    :ensure t
+    :init (elpy-enable))
+
+  (use-package py-autopep8
+    :ensure t
+    :init (add-hook 'python-mode-hook 'py-autopep8-enable-on-save))
+#+end_src
+
 ** Ruby
 
    Don't add the coding system headers to files.

@@ -6,6 +6,13 @@
     :ensure t)
 #+end_src
 
+** Docker
+
+#+begin_src emacs-lisp
+  (use-package dockerfile-mode
+    :ensure t)
+#+end_src
+
 ** Elixir
 
 #+begin_src emacs-lisp

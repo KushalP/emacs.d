@@ -110,7 +110,7 @@
   (use-package base16-theme
     :ensure t)
   (when window-system
-    (load-theme 'base16-tomorrow-dark t))
+    (load-theme 'base16-tomorrow-night t))
 #+end_src
 
 ** turn off shift select mode

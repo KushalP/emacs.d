@@ -70,6 +70,11 @@
   (use-package js2-mode
     :ensure t
     :mode ("\\.js\\'" . js2-mode)
+    :config (setq
+             ;; 2-space indent
+             js2-basic-offset 2
+             ;; don't show a trailing comma warning
+             js2-strict-trailing-comma-warning nil)
     :init (add-hook 'js2-mode-hook 'flow-minor-enable-automatically))
 #+end_src
 

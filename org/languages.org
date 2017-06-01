@@ -64,10 +64,13 @@
 ** JavaScript
 
 #+begin_src emacs-lisp
+  (use-package flow-minor-mode
+    :ensure t)
+
   (use-package js2-mode
     :ensure t
     :mode ("\\.js\\'" . js2-mode)
-    :config (setq-default js2-basic-offset 2))
+    :init (add-hook 'js2-mode-hook 'flow-minor-enable-automatically))
 #+end_src
 
 ** Lisps

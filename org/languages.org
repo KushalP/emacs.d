@@ -36,10 +36,10 @@
   (use-package go-mode
     :ensure t
     :init '(progn
-            (setq-default tab-width 4)
-            (add-hook 'before-save-hook 'gofmt-before-save)))
+            (setq-default tab-width 4)))
 
   (after-load 'go-mode
+    (add-hook 'before-save-hook 'gofmt-before-save)
     (after-load 'flycheck
       (add-hook 'go-mode-hook 'flycheck-mode-on-safe)))
 #+end_src

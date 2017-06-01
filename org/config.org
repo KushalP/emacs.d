@@ -161,10 +161,12 @@
    present.
 
 #+begin_src emacs-lisp
+  (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
+
   (use-package exec-path-from-shell
     :ensure t)
 
-  (when (memq window-system '(mac ns))
+  (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
 #+end_src
 ** multiple-cursors

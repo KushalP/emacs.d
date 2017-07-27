@@ -214,6 +214,14 @@
   (use-package ensime
     :ensure t
     :pin melpa-stable)
+
+  (use-package sbt-mode
+    :ensure t
+    :pin melpa)
+
+  (use-package scala-mode
+    :ensure t
+    :pin melpa)
 #+end_src
 
 ** TOML

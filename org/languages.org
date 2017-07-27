@@ -208,6 +208,14 @@
             (setq scss-compile-at-save nil)))
 #+end_src
 
+** Scala
+
+#+begin_src emacs-lisp
+  (use-package ensime
+    :ensure t
+    :pin melpa-stable)
+#+end_src
+
 ** TOML
 
    There are a few things that use TOML config files. Like [[https://hekad.readthedocs.org/][heka]].

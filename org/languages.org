@@ -224,6 +224,14 @@
     :pin melpa)
 #+end_src
 
+** Terraform
+
+#+begin_src emacs-lisp
+  (use-package terraform-mode
+    :ensure t
+    :pin melpa-stable)
+#+end_src
+
 ** TOML
 
    There are a few things that use TOML config files. Like [[https://hekad.readthedocs.org/][heka]].

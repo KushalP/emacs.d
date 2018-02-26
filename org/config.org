@@ -164,9 +164,11 @@
   (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
 
   (use-package exec-path-from-shell
-    :ensure t)
+    :ensure t
+    :init '(setq exec-path-from-shell-check-startup-files nil))
 
-  (when (memq window-system '(mac ns x))
+  (when (and (eq system-type 'darwin) (display-graphic-p))
+    (setq exec-path-from-shell-variables '("PATH"  "MANPATH" "SHELL" "GOPATH"))
     (exec-path-from-shell-initialize))
 #+end_src
 ** multiple-cursors

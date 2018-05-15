@@ -236,6 +236,9 @@
   (use-package terraform-mode
     :ensure t
     :pin melpa-stable)
+
+  (after-load 'terraform-mode
+    (add-hook 'before-save-hook 'terraform-format-buffer))
 #+end_src
 
 ** TOML

@@ -49,8 +49,10 @@
 
 * Global settings
 ** better-defaults
+
   [[https://github.com/technomancy/better-defaults][better-defaults]] does a bunch of generic emacs interface tidying,
   including:
+
   - better buffer unique names
   - turn off scrollbar, menu bar, toolbar
 

@@ -40,11 +40,7 @@
   Stolen from the emacs-starter-kit. An easy way to edit files within emacs that require sudo permissions.
 
 #+begin_src emacs-lisp
-  (defun sudo-edit (&optional arg)
-    (interactive "p")
-    (if (or arg (not buffer-file-name))
-      (find-file (concat "/sudo:root@localhost:" (read-file-name "File: ")))
-      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+(use-package sudo-edit)
 #+end_src
 
 * Global settings

@@ -19,3 +19,4 @@ helm-adaptive-history
 /elpa
 /org/*.el
 /places
+/transient

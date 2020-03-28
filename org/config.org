@@ -161,8 +161,6 @@
    present.
 
 #+begin_src emacs-lisp
-  (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
-
   (use-package exec-path-from-shell
     :ensure t
     :init '(setq exec-path-from-shell-check-startup-files nil))

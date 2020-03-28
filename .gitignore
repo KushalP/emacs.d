@@ -1,19 +1,19 @@
 # Emacs ignores from github.com/github/gitignore.
+*.elc
 *~
-\#*\#
+.\#*
 /.emacs.desktop
 /.emacs.desktop.lock
-*.elc
+\#*\#
 auto-save-list
 tramp
-.\#*
 
 # .emacs.d specific ignores.
 .smex-items
 .mc-lists.el
-projectile-bookmarks.eld
-ido.last
 helm-adaptive-history
+ido.last
+projectile-bookmarks.eld
 /auto-save-list
 /backups
 /elpa

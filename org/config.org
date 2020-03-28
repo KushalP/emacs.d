@@ -84,6 +84,8 @@
         helm-locate-fuzzy-match t
         helm-recentf-fuzzy-match    t
         helm-split-window-in-side-p t)
+  (setq helm-grep-ag-command "rg --color=always --colors 'match:fg:black' --colors 'match:bg:yellow' --smart-case --no-heading --line-number %s %s %s")
+  (setq helm-grep-ag-pipe-cmd-switches '("--colors 'match:fg:black'" "--colors 'match:bg:yellow'"))
   (require 'helm-config)
   (helm-mode 1)
   (helm-autoresize-mode 1))

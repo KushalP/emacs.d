@@ -208,10 +208,6 @@
 ** Scala
 
 #+begin_src emacs-lisp
-  (use-package ensime
-    :ensure t
-    :pin melpa-stable)
-
   (use-package sbt-mode
     :ensure t
     :pin melpa)

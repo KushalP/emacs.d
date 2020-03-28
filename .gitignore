@@ -13,6 +13,7 @@ tramp
 .mc-lists.el
 helm-adaptive-history
 ido.last
+network-security.data
 projectile-bookmarks.eld
 /auto-save-list
 /backups

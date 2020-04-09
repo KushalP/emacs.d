@@ -34,15 +34,6 @@
   (string= "darwin" system-type))
 #+end_src
 
-* Commands
-** sudo-edit
-
-  Stolen from the emacs-starter-kit. An easy way to edit files within emacs that require sudo permissions.
-
-#+begin_src emacs-lisp
-(use-package sudo-edit)
-#+end_src
-
 * Global settings
 ** better-defaults
 

@@ -29,7 +29,7 @@
 #+begin_src emacs-lisp
   (set-face-attribute
    'default nil
-   :font    "DejaVu Sans Mono-12")
+   :font    "DejaVu Sans Mono-14")
 #+end_src
 
 ** indicate empty lines

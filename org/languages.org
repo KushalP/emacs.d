@@ -56,10 +56,6 @@
     :init '(progn
             (add-hook 'haskell-mode-hook #'turn-on-haskell-indentation)
             (add-hook 'haskell-mode-hook #'interactive-haskell-mode)))
-
-  (use-package intero
-    :ensure t
-    :init '(add-hook 'haskell-mode-hook 'intero-mode))
 #+end_src
 
 ** Idris

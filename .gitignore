@@ -11,6 +11,7 @@ tramp
 # .emacs.d specific ignores.
 .smex-items
 .mc-lists.el
+history
 helm-adaptive-history
 ido.last
 network-security.data

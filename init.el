@@ -1,7 +1,7 @@
 (require 'package)
 
-(when (< emacs-major-version 24)
-  (error "This setup requires Emacs v24, or higher. You have: v%d"
+(when (< emacs-major-version 27)
+  (error "This setup requires Emacs v27, or higher. You have: v%d"
          emacs-major-version))
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")

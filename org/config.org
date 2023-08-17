@@ -108,6 +108,7 @@
     :ensure t)
 
   (global-set-key "\C-cg" 'magit-status)
+  (setq magit-git-executable "/opt/homebrew/bin/git")
 #+end_src
 
   Stop asking which branch to push follow and follow whatever

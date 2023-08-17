@@ -1,11 +1,4 @@
 * Programming Languages
-** C#
-
-#+begin_src emacs-lisp
-  (use-package csharp-mode
-    :ensure t)
-#+end_src
-
 ** Docker
 
 #+begin_src emacs-lisp

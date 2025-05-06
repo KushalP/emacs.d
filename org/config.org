@@ -9,6 +9,17 @@
       (package-install p)))
 #+end_src
 
+** Increase thresholds for permance
+
+#+begin_src emacs-lisp
+(setq gc-cons-threshold (* 32 1024 1024))
+(setq gcmh-high-cons-threshold (* 512 1024 1024))
+(setq gcmh-idle-delay-factor 20)
+(setq jit-lock-defer-time 0.05)
+(setq read-process-output-max (* 1024 1024))
+(setq package-native-compile t)
+#+end_src
+
 ** use-package
 
 #+begin_src emacs-lisp

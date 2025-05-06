@@ -78,11 +78,11 @@
 
   (use-package helm-rg
     :ensure t
-    :bind (("C-x C-g C-f" . helm-projectile-rg)))
+    :bind (("C-c C-g r" . helm-projectile-rg)))
 
   (use-package helm-ls-git
     :ensure t
-    :bind (("C-x C-g" . helm-ls-git-ls)))
+    :bind (("C-c C-g g" . helm-ls-git-ls)))
 #+end_src
 
 ** magit

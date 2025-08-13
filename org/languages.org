@@ -206,6 +206,14 @@
     :pin melpa)
 #+end_src
 
+** Swift
+
+#+begin_src emacs-lisp
+  (use-package swift-mode
+    :ensure t
+    :pin melpa)
+#+end_src
+
 ** Terraform
 
 #+begin_src emacs-lisp
